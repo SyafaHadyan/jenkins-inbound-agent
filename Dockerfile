@@ -1,7 +1,5 @@
 FROM jenkins/inbound-agent:latest-trixie
 
-USER root
-
 RUN apt-get install ca-certificates curl
 RUN install -m 0755 -d /etc/apt/keyrings
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
@@ -14,7 +12,7 @@ RUN echo \
 RUN apt-get update
 RUN apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+USER jenkins
+
 RUN usermod -aG docker jenkins
 RUN mkdir -p /var/lib/docker
-
-USER jenkins
