@@ -16,4 +16,4 @@ RUN apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugi
 
 RUN usermod -aG docker jenkins
 
-USER jenkins
+#USER jenkins
