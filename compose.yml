@@ -1,0 +1,14 @@
+services:
+  jenkins-inbound-agent:
+    image: syafa/jenkins-inbound-agent:latest-trixie
+    container_name: jenkins-inbound-agent
+    restart: always
+    privileged: true
+    user: 0:0
+    environment:
+      JENKINS_URL: ${JENKINS_URL}
+      JENKINS_AGENT_NAME: ${JENKINS_AGENT_NAME}
+      JENKINS_SECRET: ${JENKINS_SECRET}
+    volumes: 
+      - ~/docker-volume/jenkins-inbound-agent:/jenkins-agent
+      - /var/run/docker.sock:/var/run/docker.sock
