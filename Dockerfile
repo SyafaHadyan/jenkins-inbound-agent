@@ -14,7 +14,6 @@ RUN echo \
 RUN apt-get update
 RUN apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-RUN groupadd docker
 RUN usermod -aG docker jenkins
 
 USER jenkins
