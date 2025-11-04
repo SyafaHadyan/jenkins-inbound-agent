@@ -3,7 +3,7 @@ FROM jenkins/inbound-agent:latest-trixie
 USER root
 RUN groupadd docker
 
-RUN apt-get install ca-certificates curl
+RUN apt-get install ca-certificates curl qemu-user
 RUN install -m 0755 -d /etc/apt/keyrings
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 RUN chmod a+r /etc/apt/keyrings/docker.asc
