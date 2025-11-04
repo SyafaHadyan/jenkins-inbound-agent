@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent:latest-jdk21
+FROM jenkins/inbound-agent:latest-trixie
 
 USER root
 
