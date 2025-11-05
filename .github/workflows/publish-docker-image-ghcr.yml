@@ -19,13 +19,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: syafa/jenkins-inbound-agent:latest-trixie
-
       - name: Build and push to Github Container Registry
         env:
           REGISTRY: https://ghcr.io
