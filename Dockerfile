@@ -1,5 +1,7 @@
 FROM jenkins/inbound-agent:latest-trixie
 
+LABEL org.opencontainers.image.source https://github.com/OWNER/REPO
+
 USER root
 RUN groupadd docker
 
